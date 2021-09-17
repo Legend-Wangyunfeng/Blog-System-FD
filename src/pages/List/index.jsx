@@ -24,7 +24,7 @@ export default class index extends Component {
 
   getData = callback => {
     const {count, pageNum} = this.state
-    axios.get(`http://120.26.75.6:3001/?count=${count}&pageNum=${pageNum}`)
+    axios.get(`http://120.26.75.6:3002/?count=${count}&pageNum=${pageNum}`)
     .then(res => {
       callback(res)
       this.setState({count: count+1})
@@ -61,7 +61,7 @@ export default class index extends Component {
       })
     })
     // const {count, pageNum} = this.state
-    // axios.get(`http://120.26.75.6:3001/?count=${count}&pageNum=${pageNum}`)
+    // axios.get(`http://120.26.75.6:3002/?count=${count}&pageNum=${pageNum}`)
     // .then(res => {
     //   console.log(res.data);
     //   this.setState({
@@ -92,7 +92,7 @@ export default class index extends Component {
       newTopics,
       current: "total"
     })
-    // axios.get(`http://120.26.75.6:3001/search/?topic=${title}`)
+    // axios.get(`http://120.26.75.6:3002/search/?topic=${title}`)
     // .then(res => {
     //   this.setState({
     //     topics: res.data.topic

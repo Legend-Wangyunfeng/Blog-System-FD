@@ -22,7 +22,7 @@ export default class index extends Component {
       nickname,
       password
     }
-    axios.post('http://120.26.75.6:3001/register', body)
+    axios.post('http://120.26.75.6:3002/register', body)
     .then(res => {
       if(res.data.err_code === 0){
         // PubSub.publish('user',{user:res.data.user})

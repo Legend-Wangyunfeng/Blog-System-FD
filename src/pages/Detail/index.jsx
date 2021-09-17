@@ -34,7 +34,7 @@ export default class Detail extends Component {
   getData = async () => {
     const {id} = this.props.location.state
     try{
-      const res = await axios.get(`http://120.26.75.6:3001/topics/show?id=${id}`)
+      const res = await axios.get(`http://120.26.75.6:3002/topics/show?id=${id}`)
       if(res.data.err_code === 0){
         this.setState({
           topic: res.data.topic,
@@ -69,7 +69,7 @@ export default class Detail extends Component {
       name: nickname,
       content: this.state.myComment
     }
-    axios.post('http://120.26.75.6:3001/topic/comment', body)
+    axios.post('http://120.26.75.6:3002/topic/comment', body)
     .then(async res => {
       this.setState({
         submitting: false,

@@ -35,7 +35,7 @@ export default class index extends Component {
   }
 
   logout = () => {
-    axios.get('http://120.26.75.6:3001/logout')
+    axios.get('http://120.26.75.6:3002/logout')
     .finally(res => {
       // PubSub.publish('user',{user:{}})
       store.dispatch({type:'logout',data:{}})
