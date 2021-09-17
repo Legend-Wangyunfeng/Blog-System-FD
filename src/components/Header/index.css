@@ -1,0 +1,25 @@
+.dropdown a:link {
+  color: #FFF;
+}
+
+.dropdown a:hover {
+  color: #444;
+}
+.dropdown-menu {
+  background-color: #999
+}
+.dropdown-current-user {
+  background-color: white;
+}
+.my-navbar {
+  background-color: #444;
+}
+
+.navbar-nav > li > a.dropdown-toggle {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-nav > li > a.open {
+  background-color: #444;
+}
