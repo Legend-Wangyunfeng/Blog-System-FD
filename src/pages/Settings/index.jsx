@@ -61,7 +61,7 @@ export default class index extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://120.26.75.6:3002/settings/profile', this.state)
+    axios.post('http://120.26.75.6:3001/settings/profile', this.state)
     .then(res => {
       if(res.data.err_code === 0 || 1) {
         PubSub.publish('user',{user:{...this.state}})
@@ -105,7 +105,7 @@ export default class index extends Component {
     // }
     let newPath
     try{
-      const res = await axios.post('http://120.26.75.6:3002/settings/avatar', formData)
+      const res = await axios.post('http://120.26.75.6:3001/settings/avatar', formData)
       if (res.data.err_code === 0) {
         newPath = res.data.newPath
         console.log('@@@',newPath);
@@ -133,7 +133,7 @@ export default class index extends Component {
       oldPath: this.state.avatar,
       nickname: this.state.nickname
     }
-    await axios.post('http://120.26.75.6:3002/settings/avatarPath', body2)
+    await axios.post('http://120.26.75.6:3001/settings/avatarPath', body2)
     
     
 

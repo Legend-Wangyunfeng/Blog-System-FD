@@ -19,7 +19,7 @@ export default class Login extends Component {
       email,
       password
     }
-    axios.post('http://120.26.75.6:3002/login', body)
+    axios.post('http://120.26.75.6:3001/login', body)
     .then(res => {
       if(res.data.err_code === 0){
         // PubSub.publish('user',{user:res.data.user})
@@ -51,7 +51,7 @@ export default class Login extends Component {
       <div className="main">
         <div className="header">
           <Link to="/index">
-            <img src="/img/node.jpg" alt="what" width="340px"/>
+            <img src="/img/loginPic.jpg" alt="what" width="340px"/>
           </Link>
           <h1>用户登录</h1>
         </div>

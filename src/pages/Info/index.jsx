@@ -35,7 +35,7 @@ export default class Information extends Component {
       });
     } else {
       axios
-        .get(`http://120.26.75.6:3002/user/?nickname=${nickname}`)
+        .get(`http://120.26.75.6:3001/user/?nickname=${nickname}`)
         .then((res) => {
           if (res.err_code === 500) {
             alert("服务器错误");
@@ -53,7 +53,7 @@ export default class Information extends Component {
         });
     }
     //获取后台的发帖
-    axios.get(`http://120.26.75.6:3002/topic/user/?nickname=${nickname}`).then((res) => {
+    axios.get(`http://120.26.75.6:3001/topic/user/?nickname=${nickname}`).then((res) => {
       if(res.data.err_code === 0){
         this.setState({
           topics: res.data.topics,

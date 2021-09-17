@@ -22,7 +22,7 @@ export default class index extends Component {
       nickname,
       password
     }
-    axios.post('http://120.26.75.6:3002/register', body)
+    axios.post('http://120.26.75.6:3001/register', body)
     .then(res => {
       if(res.data.err_code === 0){
         // PubSub.publish('user',{user:res.data.user})
@@ -61,7 +61,7 @@ export default class index extends Component {
       <div className="main">
       <div className="header">
         <Link to="/index">
-          <img src="/img/node.jpg" alt="" width="340px"/>
+          <img src="/img/registerPic.jpg" alt="" width="340px"/>
         </Link>
         <h1>用户注册</h1>
       </div>

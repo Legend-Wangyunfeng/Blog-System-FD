@@ -15,7 +15,7 @@ export default class index extends Component {
       name: nickname,
       avatar
     }
-    axios.post('http://120.26.75.6:3002/topics/new', body)
+    axios.post('http://120.26.75.6:3001/topics/new', body)
     .then(res => {
       if(res.data.err_code === 0) {
         this.props.history.push('/index')
