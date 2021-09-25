@@ -5,7 +5,6 @@ import Register from './pages/Register'
 import Main from './pages/Main'
 
 // APP组件包含登录、注册、主页三个子组件
-
 export default class App extends Component {
 
   state = {user:{}}
