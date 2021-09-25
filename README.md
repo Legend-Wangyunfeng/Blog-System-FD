@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# PRD for programmer's forum
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 功能需求
 
-## Available Scripts
+1. 首页
 
-In the project directory, you can run:
+   论坛首页为一个列表页，展示帖子的标题、类别、发帖人、回复数量和修改时间。列表按修改时间由近到远排序。
 
-### `yarn start`
+   头部提供搜索功能，可搜索特定用户和标题。导航菜单可对展示列表页按帖子类别进行过滤。初步设计包含分享、问答、招聘三个板块。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   每次从数据库中请求10条信息，点击加载更多按钮再次请求。
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. 详情页
 
-### `yarn test`
+   在主页点击帖子标题可跳转至详情页，点击详情页主要包含三大功能。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   + 展示帖子详细信息，包括发帖人、发布时间、板块、文章主体。
 
-### `yarn build`
+   + 以列表形式展示帖子的所有评论信息，包括评论内容、评论人、评论时间。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+     点击发帖人或评论人昵称可跳转至其个人主页。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   + 对已登录的用户，可发表评论，并更新评论列表。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. 注册、登录功能
 
-### `yarn eject`
+   用户可已进行注册，后台数据库新增用户信息，用户邮箱、昵称均要求不能重复，密码进行加密处理。
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. 发表文章功能
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   已经登录的用户可以发表文章，包含标题、板块、文章主体三大信息。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+5. 修改个人信息功能
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   用户可对个人信息进行修改，可修改信息包括昵称、个人简介、性别、生日。
 
-## Learn More
+   用户可上传或修改头像。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+6. 在主页或详情页，点击用户昵称可跳转至该用户的个人主页，展示其个人信息，以及此用户发布过的所有文章，点击文章标题可跳转。
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 非功能需求
 
-### Analyzing the Bundle Size
+1. 页面美观，尽可能使用Antd Design组件
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. 交互流畅，用户体验效果好
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   
