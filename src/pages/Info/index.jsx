@@ -36,7 +36,7 @@ export default class Information extends Component {
       });
     } else {
       axios
-        .get(`http://127.0.0.1:3002/user/?nickname=${nickname}`)
+        .get(`http://120.26.75.6:3002/user/?nickname=${nickname}`)
         .then((res) => {
           if (res.err_code === 500) {
             alert("服务器错误");
@@ -54,7 +54,7 @@ export default class Information extends Component {
         });
     }
     //获取后台的发帖
-    axios.get(`http://127.0.0.1:3002/topic/user/?nickname=${nickname}`).then((res) => {
+    axios.get(`http://120.26.75.6:3002/topic/user/?nickname=${nickname}`).then((res) => {
       if(res.data.err_code === 0){
         this.setState({
           topics: res.data.topics,
@@ -206,11 +206,11 @@ export default class Information extends Component {
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">性别</label>
             <p>
-              {gender === "1"
+              {gender === 1
                 ? "男"
-                : gender === "0"
+                : gender === 0
                 ? "女"
-                : gender === "-1"
+                : gender === -1
                 ? "保密"
                 : ""}
             </p>

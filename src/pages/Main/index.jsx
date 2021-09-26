@@ -34,7 +34,7 @@ export default class index extends Component {
   }
 
   logout = () => {
-    axios.get('http://127.0.0.1:3002/logout')
+    axios.get('http://120.26.75.6:3002/logout')
     .finally(res => {
       // PubSub.publish('user',{user:{}})
       store.dispatch({type:'logout',data:{}})
@@ -71,12 +71,21 @@ export default class index extends Component {
 
   // 从登录和注册页获取信息
   componentDidMount () {
-    // this.token = PubSub.subscribe('user',(_,stateObj)=>{
-		// 	this.setState({
-    //     user: stateObj.user
-    //   })
+    axios.get('http://120.26.75.6:3002/login')
+    .then(res => {
+      if(res.data.err_code === 0){
+        this.setState({
+          user: res.data.user
+        })
+      }
+    })
+    this.token = PubSub.subscribe('user',(_,stateObj)=>{
+			this.setState({
+        user: stateObj.user
+      })
+      console.log('@@@', 'get subscribe');
     //   this.props.history.push('/index/display',{name: stateObj.user.nickname})
-		// })
+		})
 
     const user = store.getState()
     this.setState({

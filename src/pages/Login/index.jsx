@@ -20,7 +20,7 @@ export default class Login extends Component {
       email,
       password
     }
-    axios.post('http://127.0.0.1:3002/login', body)
+    axios.post('http://120.26.75.6:3002/login', body)
     .then(res => {
       if(res.data.err_code === 0){
         // PubSub.publish('user',{user:res.data.user})

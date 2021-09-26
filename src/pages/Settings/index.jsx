@@ -51,7 +51,7 @@ export default class index extends Component {
   }
   handleGenderChange = (e) => {
     this.setState({
-      gender: e.target.value
+      gender: Number(e.target.value)
     })
   }
   handleBirthdayChange = (e) => {
@@ -61,10 +61,11 @@ export default class index extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://127.0.0.1:3002/settings/profile', this.state)
+    axios.post('http://120.26.75.6:3002/settings/profile', this.state)
     .then(res => {
       if(res.data.err_code === 0 || 1) {
         PubSub.publish('user',{user:{...this.state}})
+        store.dispatch({type:'login',data:{...this.state}})
         this.props.history.push('/index')
       }
       // else if(res.data.err_code === 1){
@@ -105,7 +106,7 @@ export default class index extends Component {
     // }
     let newPath
     try{
-      const res = await axios.post('http://127.0.0.1:3002/settings/avatar', formData)
+      const res = await axios.post('http://120.26.75.6:3002/settings/avatar', formData)
       if (res.data.err_code === 0) {
         newPath = res.data.newPath
         console.log('@@@',newPath);
@@ -127,13 +128,17 @@ export default class index extends Component {
 
     }
     console.log(user);
+    this.setState({
+      avatar: newPath
+    })
+    store.dispatch({type:'login',data:{...this.state}})
     PubSub.publish('user',{user})
     const body2 = {
       newPath,
       oldPath: this.state.avatar,
       nickname: this.state.nickname
     }
-    await axios.post('http://127.0.0.1:3002/settings/avatarPath', body2)
+    await axios.post('http://120.26.75.6:3002/settings/avatarPath', body2)
     
     
 
