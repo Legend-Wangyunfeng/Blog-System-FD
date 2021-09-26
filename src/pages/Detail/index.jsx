@@ -22,7 +22,6 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
   </>
 );
 
-
 export default class Detail extends Component {
   state = {
     topic: {},

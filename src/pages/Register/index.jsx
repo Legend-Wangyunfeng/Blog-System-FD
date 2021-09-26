@@ -6,6 +6,7 @@ import store from '../../redux/store'
 import './index.css'
 
 axios.defaults.withCredentials = true
+
 export default class index extends Component {
 
   state = {

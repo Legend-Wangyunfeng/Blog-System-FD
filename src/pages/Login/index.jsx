@@ -6,6 +6,7 @@ import './index.css'
 import store from '../../redux/store'
 
 axios.defaults.withCredentials = true
+
 export default class Login extends Component {
   state = {
     email: '',

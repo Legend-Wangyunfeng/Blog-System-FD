@@ -5,6 +5,7 @@ import "./index.css";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
 
+
 export default class Information extends Component {
   state = {
     email: "",

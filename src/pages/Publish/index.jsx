@@ -4,6 +4,7 @@ import PubSub from 'pubsub-js'
 import store from '../../redux/store'
 
 axios.defaults.withCredentials = true
+
 export default class index extends Component {
   state = {area:'分享', title: '', content: ''}
   handleSubmit = (e) => {

@@ -21,7 +21,6 @@ axios.defaults.withCredentials = true
 // Main组件存储用户信息，从登录或注册组件获得，用react-router的state参数层层传递
 // 子组件包含列表展示、发布、详情（评论）、设置
 // 不同子组件接收state参数我可能写在了不同类型的生命周期钩子里，因为有些组件在某个钩子中能接收到，但是另一些接收不到，不知道为什么
-
 export default class index extends Component {
   state = {user:{}}
 
